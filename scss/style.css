@@ -1,0 +1,12 @@
+body {
+  background-color: #cccccc; }
+
+.block {
+  width: 500px;
+  margin: 20px auto;
+  display: flex;
+  padding: 20px;
+  color: bisque;
+}
+
+/*# sourceMappingURL=style.css.map */
