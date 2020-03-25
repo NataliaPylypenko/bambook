@@ -18,13 +18,46 @@ h1, h2, h3, h4, h5, h6, .button {
 
 // HEADER
 
+.button {
+  color: $dark-color;
+  background-color: $accent-color;
+  border-radius: 2px;
+  font-size: em(16px);
+  padding: 6px 22px;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    background-color: darken($accent-color, 10%);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $dark-color;
+  }
+}
+
 //Top pannel
 .logo {
   position: relative;
+  margin-left: 45px;
   top: 3px;
   img {
-    width: 80%;
+    width: 50%;
     padding: 0 auto;
+  }
+  p {
+    position: absolute;
+    top: -20px;
+    left: -45px;
+    font-size: 44px;
+    font-weight: bold;
+    color: $dark-color;
   }
 }
 .top-pannel {
@@ -54,35 +87,38 @@ h1, h2, h3, h4, h5, h6, .button {
   }
 
   &-icon {
-    div {
+    div.social {
       padding-bottom: 30px;
-      img {
-        padding: 0 3px;
-      }
       a {
-        padding: 0 8px;
-        font-size: 24px;
+        padding: 0 6px;
+        font-size: 16px;
+        color: $dark-color;
+      }
+    }
+    div.org {
+      padding-bottom: 30px;
+      a {
+        padding: 0 6px;
+        font-size: 22px;
         color: $dark-color;
         &:last-child {
-          color: darken($accent-color, 5%);
           position: relative;
           .cart-count {
             display: block;
-            width: 16px;
-            height: 16px;
-            background: $dark-color;
+            width: 20px;
+            height: 20px;
+            background: $accent-color;
+            color: $dark-color;
             position: absolute;
-            top: -12px;
-            left: 18px;
+            top: -10px;
+            left: 25px;
             border-radius: 100%;
-            color: #fff;
-            font-size: 11px;
+            font-size: 12px;
             text-align: center;
             padding-bottom: 0;
           }
         }
       }
-
     }
   }
 
@@ -94,7 +130,7 @@ h1, h2, h3, h4, h5, h6, .button {
   border-top: lighten($dark-color, 10%) 2px solid;
   background-color: $dark-color;
   text-align: center;
-  font-size: em(40px);
+  font-size: em(20);
 
   ul, li {
     list-style-type: none;

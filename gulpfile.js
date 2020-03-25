@@ -35,6 +35,14 @@ gulp.task('html', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('images', function () {
+    // таск считывает все файлы с расшырением html
+    return gulp.src('images/*.png')
+    // в какой папке хранятся данные файлы
+        .pipe(gulp.dest('build/images'))
+        .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('serve', function () {
     // инициализируем browserSync который будет следить за изменениями папки build
     browserSync.init({
@@ -44,9 +52,10 @@ gulp.task('serve', function () {
     // следим за файлами .scss в папке scss и если там происходят изменения запускаем таск с именем sass
     gulp.watch("scss/**/*.scss", gulp.parallel("sass"));
     gulp.watch("*.html", gulp.parallel("html"));
+    gulp.watch("*.png", gulp.parallel("images"));
 });
 
-gulp.task('default', gulp.parallel('serve', 'html', 'sass'));
+gulp.task('default', gulp.parallel('serve', 'html', 'sass', 'images'));
 // gulp.task('default', gulp.series());
 // parallel() выполняет команды паралельно/одновременно
 // series() выполняет команды последовательно
