@@ -43,6 +43,14 @@ gulp.task('images', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('img', function () {
+    // таск считывает все файлы с расшырением html
+    return gulp.src('img/*.jpg')
+    // в какой папке хранятся данные файлы
+        .pipe(gulp.dest('build/img'))
+        .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('serve', function () {
     // инициализируем browserSync который будет следить за изменениями папки build
     browserSync.init({
@@ -53,6 +61,7 @@ gulp.task('serve', function () {
     gulp.watch("scss/**/*.scss", gulp.parallel("sass"));
     gulp.watch("*.html", gulp.parallel("html"));
     gulp.watch("*.png", gulp.parallel("images"));
+    gulp.watch("*.jpg", gulp.parallel("img"));
 });
 
 gulp.task('default', gulp.parallel('serve', 'html', 'sass', 'images'));
