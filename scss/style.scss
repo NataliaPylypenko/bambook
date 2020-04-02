@@ -6,7 +6,7 @@ body {
   background-color: #fff;
   font-size: 16px;
   line-height: 1.5;
-  font-family: Aril, Tahoma, sans-serif;
+  font-family: RobotoMedium, sans-serif;
   color: $dark-color;
 }
 
@@ -15,8 +15,14 @@ h1, h2, h3, h4, h5, h6, .button {
   text-transform: uppercase;
 }
 
+ul {
+  list-style: none;
+}
 
-// HEADER
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .button {
   color: $dark-color;
@@ -49,23 +55,16 @@ h1, h2, h3, h4, h5, h6, .button {
   }
 }
 
+
+
+// HEADER
+
 //Top pannel
 .logo {
-  position: relative;
-  margin-left: 45px;
-  top: 3px;
   img {
-    width: 50%;
+    //width: 100%;
+    max-height: 110px;
     padding: 0 auto;
-    border-radius: 50%;
-  }
-  p {
-    position: absolute;
-    top: -20px;
-    left: -45px;
-    font-size: 44px;
-    font-weight: bold;
-    color: $dark-color;
   }
 }
 .top-pannel {
@@ -80,7 +79,8 @@ h1, h2, h3, h4, h5, h6, .button {
     }
     li {
       opacity: .8;
-      font-size: em(13px);
+      font-family: "RobotoCondensedRegular", sans-serif;
+      font-size: em(15px);
       a {
         color: $dark-color;
       }
@@ -97,8 +97,9 @@ h1, h2, h3, h4, h5, h6, .button {
   }
 
   &-icon {
+    height: 110px;
     div.social {
-      padding-bottom: 30px;
+      margin-bottom: 53px;
       a {
         padding: 0 6px;
         font-size: 16px;
@@ -106,7 +107,6 @@ h1, h2, h3, h4, h5, h6, .button {
       }
     }
     div.org {
-      padding-bottom: 30px;
       a {
         padding: 0 6px;
         font-size: 22px;
@@ -135,32 +135,43 @@ h1, h2, h3, h4, h5, h6, .button {
 }
 
 
+
 // Top line
 .top-line {
   border-top: lighten($dark-color, 10%) 2px solid;
   background-color: $dark-color;
   text-align: center;
-  font-size: em(20);
+  font-size: em(18px);
   position: relative;
   z-index: 2;
-
-  ul, li {
-    list-style-type: none;
+  .navbar {
     padding: 0;
-    margin: 0;
-  }
-
-  li {
-    a {
-      color: $light-color;
-      padding: 20px 15px;
+    li {
+      a {
+        color: $light-color;
+        padding: 20px 15px;
+      }
+      &:hover {
+        background-color: darken($dark-color, 5%);
+        a:hover {
+          color: $accent-color;
+        }
+      }
     }
-    &:hover {
+    li.active {
       background-color: darken($dark-color, 5%);
-      a:hover {
+      a {
         color: $accent-color;
       }
     }
+    ul, li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .navbar-brand {
+    font-size: 24px;
   }
 
   .dropdown-menu.show {
@@ -182,27 +193,29 @@ h1, h2, h3, h4, h5, h6, .button {
       }
     }
   }
+  .navbar-brand span {
+    color: $accent-color;
+  }
 }
 
 //Slider
 .slider {
-  //position: absolute;
-  //top: 0;
   width: 100%;
   .slide {
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
     h2 {
-      font-family: "RobotoCondensedRegular", sans-serif;
-      font-size: em(32);
-      line-height: em(24);
+      font-family: RobotoCondensedRegular, sans-serif;
+      font-size: em(32px);
+      line-height: em(24px);
       &:first-line {
-        color: $accent-color;
+        color: darken($accent-color, 10%);
       }
     }
     p {
       font-family: 'RobotoLight', sans-serif;
+      font-size: em(16px);
       opacity: .75;
       margin-top: 25px;
       margin-bottom: 35px;
@@ -236,7 +249,7 @@ h1, h2, h3, h4, h5, h6, .button {
 .carousel-control-prev, .carousel-control-next {
   i.fas {
     color: $dark-color;
-    font-size: 30px;
+    font-size: em(30px);
   }
 }
 
@@ -250,5 +263,83 @@ h1, h2, h3, h4, h5, h6, .button {
   }
 }
 
+.navbar-dark .navbar-toggler {
+  border-color: transparent;
+
+}
+
+
+
+
+// MAIN
+
+.main-goods {
+  margin-top: 64px;
+  margin-bottom: 32px;
+  .main-goods__heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .main-goods__grid {
+    .main-goods__cell {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      background-color: #fff;
+      border: 4px solid darken($light-color, 10%);
+      border-radius: 15px 15px 0 0;
+      position: relative;
+      .main-goods__tile {
+        padding: 16px;
+        a.main-goods__picture {
+          display: block;
+          height: 200px;
+          margin-bottom: 16px;
+          text-align: center;
+          img {
+            max-width: 100%;
+          }
+        }
+        a.main-goods__title {}
+        p.main-goods__old-price {
+          text-decoration: line-through;
+          font-size: 15px;
+          color: #888;
+        }
+        p.main-goods__price {
+          color: #e74747;
+          font-size: em(24px);
+          font-weight: 700;
+          span.main-goods__currency {
+            font-size: em(13px);
+          }
+        }
+
+        .is-stock {
+          margin: 2px 0;
+          padding-left: 16px;
+          color: #1ac136;
+        }
+      }
+    }
+  }
+
+  // category
+  .main-goods__grid.category {
+    .main-goods__cell {
+      background-image: url("../images/bg-folder.png");
+      background-size: cover;
+      background-position: center center;
+      height: 300px;
+      .main-goods__tile {
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+}
 
 

@@ -11,7 +11,8 @@
         crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="css/fonts.css" />
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/media.css" />
 
 </head>
 
@@ -23,14 +24,15 @@
     <div class="container">
       <div class="row">
 
-        <div class="col col-md-3">
-          <a href="#" class="logo">
-            <img src="images/logo.png" alt="logo" class="">
-            <p>BamBook</p>
-          </a>
+        <div class="col col-md-3 d-none d-sm-none d-md-block">
+          <div class="d-flex align-items-center" style="height: 100%">
+            <a href="#" class="logo">
+              <img src="images/logo.png" alt="logo" class="rounded mx-auto ">
+            </a>
+          </div>
         </div>
 
-        <div class="col col-md-3">
+        <div class="col col-md-6 d-none d-sm-none d-md-block">
           <div class="top-pannel-box">
             <ul>
               <li><a href="tel:+3805555555555"><i class="fas fa-phone"></i> 55-5-55-555</a></li>
@@ -42,15 +44,15 @@
           </div>
         </div>
 
-        <div class="col col-md-6">
-          <div class="d-flex flex-column align-items-end top-pannel-icon">
-            <div class="social">
+        <div class="col col-md-3 col-12 d-flex justify-content-center d-none d-md-block">
+          <div class="top-pannel-icon d-flex flex-column align-items-end">
+            <div class="social d-none d-md-block">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fab fa-google-plus-g"></i></a>
             </div>
-            <div class="org">
+            <div class="org d-none d-md-block">
               <a href="#"><i class="fas fa-user-plus"></i></a>
               <a href="#"><i class="fas fa-sign-in-alt"></i></a>
               <a href="#"><i class="fas fa-shopping-cart"></i>
@@ -69,41 +71,56 @@
       <div class="row">
 
         <div class="col-12">
-          <ul class="nav justify-content-center">
-            <li class="nav-item active">
-              <a class="nav-link active" href="#">Главная</a>
-            </li>
 
-            <li class="nav-item dropdown">
-              <a  class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Наша продукция</a>
-              <div class="dropdown-menu">
-                <ul>
-                  <li><a class="dropdown-item" href="#">Новинки</a></li>
-                  <li><a class="dropdown-item" href="#">ДОУ и школа</a></li>
-                  <li><a class="dropdown-item" href="#">Детская литература</a></li>
-                  <li><a class="dropdown-item" href="#">Игрушки</a></li>
-                </ul>
-              </div>
-            </li>
+          <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand d-block d-md-none" href="#"><span>bam</span>book</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Главная</a>
+                </li>
 
-            <li class="nav-item"><a class="nav-link" href="#">Оплата и доставка</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Новости</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Валюта корзины</a></li>
-          </ul>
+                <li class="nav-item dropdown">
+                  <a  class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Наша продукция</a>
+                  <div class="dropdown-menu">
+                    <ul>
+                      <li><a class="dropdown-item" href="#">Новинки</a></li>
+                      <li><a class="dropdown-item" href="#">ДОУ и школа</a></li>
+                      <li><a class="dropdown-item" href="#">Детская литература</a></li>
+                      <li><a class="dropdown-item" href="#">Игрушки</a></li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="#">Оплата и доставка</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Валюта корзины</a></li>
+
+                <li class="nav-item d-block d-md-none"><a class="nav-link" href="#"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+                <li class="nav-item d-block d-md-none"><a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Авторизация</a></li>
+              </ul>
+            </div>
+          </nav>
+
         </div>
 
       </div>
     </div>
   </div>
 
-  <div id="carouselExampleControls" class="carousel slide align-items-center" data-ride="carousel">
+  <div class="d-block d-md-none">
+    <button type="button" class="button btn-block">
+      <i class="fas fa-shopping-cart"></i> Товаров: 6
+      <br>
+      На сумму: (200.00 грн)
+    </button>
+  </div>
 
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
+  <div id="carouselExampleControls" class="carousel slide align-items-center" data-ride="carousel">
 
     <div class="carousel-inner slider">
 
@@ -114,10 +131,10 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-md-10 offset-md-1">
+              <div class="col-12 col-md-10 offset-md-1">
 
                 <div class="row">
-                  <div class="col-md-6 d-flex align-items-center">
+                  <div class="col-12 col-md-7 d-flex align-items-center">
                     <div class="description">
                       <h2>Продовження серії<br> "Зося з вулиці Котячої"</h2>
                       <p>
@@ -129,11 +146,13 @@
                       <a href="#" class="button">Купить новинку</a>
                     </div>
                   </div>
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="slide-img-wrap ml-auto">
-                      <img src="img/slide-img-1.jpg" alt="one">
+
+                  <div class="d-none d-sm-none d-md-block col-md-5 d-flex align-items-center">
+                    <div class="d-none d-md-block slide-img-wrap">
+                      <img class="d-flex ml-auto" src="img/slide-img-1.jpg" alt="one">
                     </div>
                   </div>
+
                 </div>
 
               </div>
@@ -151,12 +170,12 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-md-10 offset-md-1">
+              <div class="col-12 col-md-10 offset-md-1">
 
                 <div class="row">
-                  <div class="col-md-6 d-flex align-items-center">
+                  <div class="col-12 col-md-7 d-flex align-items-center">
                     <div class="description">
-                      <h2>Книга Пірати зі стайні.<br> Вівсяна банда книга №5.</h2>
+                      <h2>Книга Пірати зі стайні.<br> Вівсяна банда</h2>
                       <p>
                         «Вівсяна банда» — серія кумедних історій про коней і поні. У п’ятій книзі
                         поні Шоко та його друзяки вирушають у довгоочікувану відпустку до рідного Даммбюля —
@@ -165,9 +184,9 @@
                       <a href="#" class="button">Купить новинку</a>
                     </div>
                   </div>
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="slide-img-wrap ml-auto">
-                      <img src="img/slide-img-2.jpg" alt="one">
+                  <div class="d-none d-sm-none d-md-block col-md-5 d-flex align-items-center">
+                    <div class="d-none d-md-block slide-img-wrap ml-auto">
+                      <img class="d-flex ml-auto" src="img/slide-img-2.jpg" alt="one">
                     </div>
                   </div>
                 </div>
@@ -187,10 +206,10 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-md-10 offset-md-1">
+              <div class="col-12 col-md-10 offset-md-1">
 
                 <div class="row">
-                  <div class="col-md-6 d-flex align-items-center">
+                  <div class="col-12 col-md-7 d-flex align-items-center">
                     <div class="description">
                       <h2>Розумна собачка<br> Соня</h2>
                       <p>
@@ -201,9 +220,9 @@
                       <a href="#" class="button">Купить новинку</a>
                     </div>
                   </div>
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="slide-img-wrap ml-auto">
-                      <img src="img/slide-img-3.jpg" alt="one">
+                  <div class="d-none d-sm-none d-md-block col-md-5 d-flex align-items-center">
+                    <div class="d-none d-md-block slide-img-wrap ml-auto">
+                      <img class="d-flex ml-auto" src="img/slide-img-3.jpg" alt="one">
                     </div>
                   </div>
                 </div>
@@ -218,11 +237,11 @@
 
     </div>
 
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <a class="carousel-control-prev d-none d-md-flex" href="#carouselExampleControls" role="button" data-slide="prev">
       <i class="fas fa-chevron-left"></i>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <a class="carousel-control-next d-none d-md-flex" href="#carouselExampleControls" role="button" data-slide="next">
       <i class="fas fa-chevron-right"></i>
       <span class="sr-only">Next</span>
     </a>
@@ -230,6 +249,128 @@
   </div>
 
 </header>
+
+
+<main>
+
+  <div class="container">
+
+    <!--first category-->
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="main-goods">
+          <h2 class="main-goods__heading">
+            Категории товаров
+          </h2>
+
+          <div class="row">
+
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="main-goods__grid category">
+                <div class="main-goods__cell">
+                    <div class="main-goods__tile">
+                      <button type="button" class="button btn-block">
+                        Новинки
+                      </button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="main-goods__grid category">
+                <div class="main-goods__cell">
+                  <div class="main-goods__tile">
+                    <button type="button" class="button btn-block">
+                      ДОУ и школа
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="main-goods__grid category">
+                <div class="main-goods__cell">
+                  <div class="main-goods__tile">
+                    <button type="button" class="button btn-block">
+                      Детская литература
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="main-goods__grid category">
+                <div class="main-goods__cell">
+                  <div class="main-goods__tile">
+                    <button type="button" class="button btn-block">
+                      Игрушки
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!--second category-->
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="main-goods">
+          <h2 class="main-goods__heading">
+            Самые популярные товары
+          </h2>
+
+          <div class="row">
+
+            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="main-goods__grid">
+                <div class="main-goods__cell">
+                  <div class="main-goods__tile">
+                    <a href="#" class="main-goods__picture">
+                      <img src="img/slide-img-1.jpg" alt="alt">
+                    </a>
+                    <a href="#" class="main-goods__title">
+                      Продовження серії
+                      <br>
+                      "Зося з вулиці Котячої"
+                    </a>
+
+                    <p class="main-goods__old-price">
+                      5&nbsp;777&nbsp;грн
+                    </p>
+                    <p class="main-goods__price">
+                      4&nbsp;999
+                      <span class="main-goods__currency">грн</span>
+                    </p>
+
+                    <div class="is-stock"><i class="fas fa-check"></i>Есть в наличии</div>
+                    <a href="#" class="button">Купить</a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
 
 
 
