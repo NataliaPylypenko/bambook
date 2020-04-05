@@ -24,6 +24,13 @@ a {
   cursor: pointer;
 }
 
+.navbar-brand {
+  font-size: 24px;
+  span {
+    color: $accent-color;
+  }
+}
+
 .button {
   color: $dark-color;
   background-color: $accent-color;
@@ -87,7 +94,7 @@ a {
       &:hover {
         a:hover {
           color: darken($accent-color, 5%);
-          text-decoration: none;
+          //text-decoration: none;
         }
       }
       i {
@@ -144,34 +151,31 @@ a {
   font-size: em(18px);
   position: relative;
   z-index: 2;
+  .navbar-dark .navbar-nav .active>.nav-link {
+    color: $accent-color;
+  }
   .navbar {
     padding: 0;
-    li {
-      a {
-        color: $light-color;
-        padding: 20px 15px;
-      }
-      &:hover {
-        background-color: darken($dark-color, 5%);
-        a:hover {
-          color: $accent-color;
+    ul {
+      li {
+        a {
+          color: $light-color;
+          padding: 20px 15px;
+        }
+        &:hover {
+          background-color: darken($dark-color, 5%);
+          a {
+            color: $accent-color;
+          }
         }
       }
     }
-    li.active {
-      background-color: darken($dark-color, 5%);
-      a {
-        color: $accent-color;
-      }
-    }
+
     ul, li {
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
-  }
-  .navbar-brand {
-    font-size: 24px;
   }
 
   .dropdown-menu.show {
@@ -193,9 +197,7 @@ a {
       }
     }
   }
-  .navbar-brand span {
-    color: $accent-color;
-  }
+
 }
 
 //Slider
@@ -272,12 +274,15 @@ a {
 
 
 // MAIN
-
+main {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .main-goods {
-  margin-top: 64px;
-  margin-bottom: 32px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   .main-goods__heading {
-    font-size: 32px;
+    font-size: em(18px);
     font-weight: 700;
     margin-bottom: 20px;
   }
@@ -294,17 +299,20 @@ a {
         a.main-goods__picture {
           display: block;
           height: 200px;
-          margin-bottom: 16px;
+          margin-bottom: 5px;
           text-align: center;
           img {
-            max-width: 100%;
+            max-height: 100%;
           }
         }
-        a.main-goods__title {}
+        .main-goods__title {
+          height: 70px;
+        }
         p.main-goods__old-price {
           text-decoration: line-through;
           font-size: 15px;
           color: #888;
+          margin: 0;
         }
         p.main-goods__price {
           color: #e74747;
@@ -317,7 +325,8 @@ a {
 
         .is-stock {
           margin: 2px 0;
-          padding-left: 16px;
+          text-align: center;
+          font-style: italic;
           color: #1ac136;
         }
       }
@@ -337,9 +346,78 @@ a {
         bottom: 0;
         right: 0;
         left: 0;
+        .button {
+          padding: 10px;
+        }
       }
     }
   }
 }
 
+
+// FOOTER
+.footer {
+  border-top: lighten($dark-color, 10%) 2px solid;
+  background-color: $dark-color;
+  color: $light-color;
+  padding: 30px 20px 0;
+  font-family: "RobotoCondensedRegular", sans-serif;
+  font-size: em(15px);
+  h4 {
+    font-size: em(20px);
+    color: $accent-color;
+  }
+
+  //mobile
+  ul.footer-mobile {
+    padding: 0;
+    margin-bottom: 30px;
+    li {
+      a {
+        color: $light-color;
+      }
+      i {
+        color: darken($accent-color, 5%);
+      }
+    }
+
+  }
+
+  //one column
+
+  //two column
+  a {
+    img {
+      margin-bottom: 30px;
+      max-height: 140px;
+    }
+  }
+  p {
+    margin-bottom: 30px;
+  }
+
+  // three/four columns
+  &-box {
+    margin-bottom: 30px;
+    ul, li {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      a {
+        color: $light-color;
+      }
+      &:hover {
+        a:hover {
+          color: darken($accent-color, 5%);
+          text-decoration: none;
+        }
+      }
+      i {
+        color: darken($accent-color, 5%);
+      }
+    }
+  }
+
+}
 

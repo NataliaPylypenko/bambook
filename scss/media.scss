@@ -22,6 +22,15 @@
     }
   }
 
+  //FOOTER
+  .footer {
+    a {
+      img {
+        max-height: 125px;
+      }
+    }
+  }
+
 }
 
 
@@ -55,6 +64,15 @@
         img {
           max-height: 280px;
         }
+      }
+    }
+  }
+
+  //FOOTER
+  .footer {
+    a {
+      img {
+        max-height: 100px;
       }
     }
   }
