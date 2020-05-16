@@ -82,15 +82,23 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
 
+  // HEADER
   .top-pannel {
     padding: 0;
   }
+
   .top-line {
-    li {
-      a {
-        padding: 7px;
+
+    .navbar {
+      ul {
+        li {
+          a {
+            padding: 5px;
+          }
+        }
       }
     }
+
     .dropdown-menu.show {
       ul {
         li {
@@ -101,6 +109,7 @@
         }
       }
     }
+
   }
 
 }

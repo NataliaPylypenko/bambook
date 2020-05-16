@@ -1,0 +1,70 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+// FOOTER
+.footer {
+  border-top: lighten($dark-color, 10%) 2px solid;
+  background-color: $dark-color;
+  color: $light-color;
+  padding: 30px 20px 0;
+  font-family: "RobotoCondensedRegular", sans-serif;
+  font-size: em(15px);
+  h4 {
+    font-size: em(20px);
+    color: $accent-color;
+  }
+
+  //mobile
+  ul.footer-mobile {
+    padding: 0;
+    margin-bottom: 30px;
+    li {
+      a {
+        color: $light-color;
+      }
+      i {
+        color: darken($accent-color, 5%);
+      }
+    }
+
+  }
+
+  //one column
+
+  //two column
+  a {
+    img {
+      margin-bottom: 30px;
+      max-height: 140px;
+    }
+  }
+  p {
+    margin-bottom: 30px;
+  }
+
+  // three/four columns
+  &-box {
+    margin-bottom: 30px;
+    ul, li {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      a {
+        color: $light-color;
+      }
+      &:hover {
+        a:hover {
+          color: darken($accent-color, 5%);
+          text-decoration: none;
+        }
+      }
+      i {
+        color: darken($accent-color, 5%);
+      }
+    }
+  }
+
+}
+
